@@ -1,4 +1,4 @@
-package com.booking;
+package com.booking.sorting;
 
 import java.util.*;
 

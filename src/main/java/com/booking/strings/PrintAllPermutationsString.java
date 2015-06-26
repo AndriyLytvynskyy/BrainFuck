@@ -1,4 +1,4 @@
-package com.booking;
+package com.booking.strings;
 
 import java.util.ArrayList;
 import java.util.HashSet;

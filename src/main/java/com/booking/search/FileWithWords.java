@@ -1,4 +1,4 @@
-package com.booking;
+package com.booking.search;
 
 import java.util.Arrays;
 import java.util.List;

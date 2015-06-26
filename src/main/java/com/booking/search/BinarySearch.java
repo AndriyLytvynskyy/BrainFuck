@@ -1,4 +1,4 @@
-package com.booking.sorting;
+package com.booking.search;
 
 public class BinarySearch {
 
