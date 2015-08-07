@@ -1,5 +1,7 @@
 package com.booking.binary;
 
+import java.net.URLClassLoader;
+
 /**
  * Created by Andrii_Lytvynskyi on 6/30/2015.
  */

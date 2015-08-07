@@ -24,7 +24,7 @@ public class GCD {
     }
 
     public static void main(String[] args) {
-        System.out.println(gcdRecursive(12500, 125));
-        System.out.println(gcdNonRecursive(12500, 125));
+        System.out.println(gcdRecursive(9,6));
+        //System.out.println(gcdNonRecursive(12500, 125));
     }
 }

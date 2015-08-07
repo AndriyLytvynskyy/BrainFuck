@@ -17,13 +17,13 @@ package com.booking.trees;
 
 
 /**
- * A (h=3)
- * /         \
- * B(h=1)      C (h=2)
- * /           /   \
- * D (h=0)   E(h=0)  F (h=1)
- * /
- * G (h=0)
+ *        A (h=3)
+ *      /         \
+ *   B(h=1)      C (h=2)
+ *   /            /   \
+ * D (h=0)     E(h=0)  F (h=1)
+ *  /
+ *  G (h=0)
  */
 public class TreeIsBalanced {
     static class TreeNode {
