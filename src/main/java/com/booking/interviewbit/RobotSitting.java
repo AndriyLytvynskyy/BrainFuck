@@ -23,7 +23,7 @@ public class RobotSitting {
         }
     }
 
-    public int possibleWays(int a, int b){
+    public static int possibleWays(int a, int b){
         if(a==0 || b==0) return 0;
         if(a==1 || b==1) return 1;
 
@@ -50,6 +50,6 @@ public class RobotSitting {
     }
 
     public static void main(String[] args) {
-
+            possibleWays(2,2);
     }
 }
