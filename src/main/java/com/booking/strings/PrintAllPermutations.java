@@ -11,6 +11,24 @@ import java.util.List;
  */
 public class PrintAllPermutations {
 
+
+    public static List<String> permuteIterativeStrings(String word){
+        List<String> permutations = new ArrayList<String>();
+        permutations.add("");
+        for (Character ch : word.toCharArray()) {
+            List<String> current = new ArrayList<String>();
+            for (String allword: permutations) {
+                for (int j = 0; j <= allword.length(); j++) {
+                    String first = allword.substring(0, j);
+                    String second = allword.substring(j);
+                    current.add(first + ch + second);
+                }
+            }
+            permutations = new ArrayList<>(current);
+        }
+        return permutations;
+    }
+
     /**
      * Iterative permutation
      * @param inputList
@@ -25,7 +43,6 @@ public class PrintAllPermutations {
      *  [3, 1, 2]
      *  [1, 3, 2]
      *  [1, 2, 3]
-     *
      *
      */
     public static ArrayList<ArrayList<Integer>> permuteIterativeIntegers(ArrayList<Integer> inputList) {
@@ -116,20 +133,20 @@ public class PrintAllPermutations {
     }
 
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-
-        ArrayList<ArrayList<Integer>> perms = permuteIterativeIntegers(list);
-        for (ArrayList<Integer> perm : perms) {
-            System.out.println(perm);
-        }
-        //        System.out.println("ABC".substring(0,0));
-//        List<String> perms = permutationList("ABC");
-//        for (String perm : perms) {
+//        ArrayList<Integer> list = new ArrayList<Integer>();
+//        list.add(1);
+//        list.add(2);
+//        list.add(3);
+//
+//        ArrayList<ArrayList<Integer>> perms = permuteIterativeIntegers(list);
+//        for (ArrayList<Integer> perm : perms) {
 //            System.out.println(perm);
 //        }
+        System.out.println("ABC".substring(0,0));
+        List<String> perms = permuteIterativeStrings("ABC");
+        for (String perm : perms) {
+            System.out.println(perm);
+        }
 //        String s = "ABC";
 //        Set<String> perms1 = new HashSet();
 //        for (int i = 0; i <= s.length() - 1;i++ ){
