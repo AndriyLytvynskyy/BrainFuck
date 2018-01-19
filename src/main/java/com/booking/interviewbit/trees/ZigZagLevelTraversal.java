@@ -24,6 +24,13 @@ import java.util.Stack;
  * Solution discussion:
  * remember that stack is a LIFO structure. Both insertion and deletion are allowed at only one end of Stack called Top
  *
+ * 1. You create a MainStack push root into it
+ * 2. You create a helper stack for each level of tree
+ * 3. At the end of while loop for level 1 ->
+ * (20, 9) helperStack
+ * listOfResults is 1
+ * Main stack is empty and then you reassign
+ * MainStack = HelperStack - this is the main trick where you reassign
  *
  *
  */
@@ -66,7 +73,8 @@ public class ZigZagLevelTraversal {
                     if (pop.right != null) {
                         helperStack.push(pop.right);
                     }
-                } else {
+                }
+                else {
                     if (pop.right != null) {
                         helperStack.push(pop.right);
                     }
