@@ -16,26 +16,6 @@ package com.booking.interviewbit.trees;
 //                    C (Height = 0)
 
 
-/**
- *        A (h=3)
- *      /         \
- *   B(h=1)      C (h=2)
- *   /            /   \
- * D (h=0)     E(h=0)  F (h=1)
- *  /
- *  G (h=0)
- */
-
-  class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) {
-       val = x;
-       left=null;
-       right=null;
-      }
-  }
 public class BalancedBinaryTree {
     public static int getHeight(TreeNode root) {
         if (root == null) return 0; // Base case

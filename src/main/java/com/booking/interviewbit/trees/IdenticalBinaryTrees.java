@@ -10,22 +10,8 @@ package com.booking.interviewbit.trees;
  *
  */
 
-
-// Definition for binary tree
-class TreeNodeIdent {
-    int val;
-    TreeNodeIdent left;
-    TreeNodeIdent right;
-
-    TreeNodeIdent(int x) {
-        val = x;
-        left = null;
-        right = null;
-    }
-}
-
 public class IdenticalBinaryTrees {
-    public static int isSameTree(TreeNodeIdent A, TreeNodeIdent B) {
+    public static int isSameTree(TreeNode A, TreeNode B) {
         //both identical
         if (A ==null && B == null){
             return 1;
@@ -40,15 +26,15 @@ public class IdenticalBinaryTrees {
     }
 
     public static void main(String[] args) {
-        TreeNodeIdent treeNodeIdent = new TreeNodeIdent(1);
-        TreeNodeIdent left = new TreeNodeIdent(2);
-        TreeNodeIdent right = new TreeNodeIdent(3);
+        TreeNode treeNodeIdent = new TreeNode(1);
+        TreeNode left = new TreeNode(2);
+        TreeNode right = new TreeNode(3);
         treeNodeIdent.left = left;
         treeNodeIdent.right = right;
 
-        TreeNodeIdent treeNodeIdent1 = new TreeNodeIdent(1);
-        TreeNodeIdent left1 = new TreeNodeIdent(3);
-        TreeNodeIdent right1 = new TreeNodeIdent(2);
+        TreeNode treeNodeIdent1 = new TreeNode(1);
+        TreeNode left1 = new TreeNode(3);
+        TreeNode right1 = new TreeNode(2);
         treeNodeIdent1.left = left1;
         treeNodeIdent1.right = right1;
         System.out.println(isSameTree(treeNodeIdent, treeNodeIdent1));

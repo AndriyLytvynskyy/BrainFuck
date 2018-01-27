@@ -3,68 +3,23 @@ package com.booking.interviewbit.trees;
 import java.util.ArrayList;
 import java.util.Stack;
 
-/**
- * Given a binary tree, return the zigzag level order traversal of its nodes’ values. (ie, from left to right, then right to left for the next level and alternate between).
- * <p>
- *   3
- * / \
- * 9  20
-     /  \
-    15   7
- * <p>
- * Result:
- * [
- * [3],
- * [20, 9],
- * [15, 7]
- * ]
- *
- *
- *
- * Solution discussion:
- * remember that stack is a LIFO structure. Both insertion and deletion are allowed at only one end of Stack called Top
- *
- * 1. You create a MainStack push root into it
- * 2. You create a helper stack for each level of tree
- * 3. At the end of while loop for level 1 ->
- * (20, 9) helperStack
- * listOfResults is 1
- * Main stack is empty and then you reassign
- * MainStack = HelperStack - this is the main trick where you reassign
- *
- *
- */
-
-// Definition for binary tree
-class TreeNodeZig {
-    int val;
-    TreeNodeZig left;
-    TreeNodeZig right;
-
-    TreeNodeZig(int x) {
-        val = x;
-        left = null;
-        right = null;
-    }
-}
-
 public class ZigZagLevelTraversal {
-    public ArrayList<ArrayList<Integer>> zigzagLevelOrder(TreeNodeZig A) {
+    public ArrayList<ArrayList<Integer>> zigzagLevelOrder(TreeNode A) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         if (A == null) {
             return result;
         }
         // Create a general stack
-        Stack<TreeNodeZig> stack = new Stack<TreeNodeZig>();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
         stack.push(A);
         boolean flipDirection = false;
 
         while (!stack.isEmpty()) {
             // Create a helper stack
-            Stack<TreeNodeZig> helperStack = new Stack<TreeNodeZig>();
+            Stack<TreeNode> helperStack = new Stack<TreeNode>();
             ArrayList<Integer> list = new ArrayList<Integer>();
             while (!stack.isEmpty()) {
-                TreeNodeZig pop = stack.pop();
+                TreeNode pop = stack.pop();
                 list.add(pop.val);
                 if (!flipDirection) {
                     if (pop.left != null) {
@@ -93,14 +48,14 @@ public class ZigZagLevelTraversal {
     }
 
     public static void main(String[] args) {
-        TreeNodeZig treeNodeZig1 = new TreeNodeZig(3);
-        TreeNodeZig treeNodeZig2 = new TreeNodeZig(20);
-        TreeNodeZig treeNodeZig3 = new TreeNodeZig(9);
+        TreeNode treeNodeZig1 = new TreeNode(3);
+        TreeNode treeNodeZig2 = new TreeNode(20);
+        TreeNode treeNodeZig3 = new TreeNode(9);
         treeNodeZig1.left = treeNodeZig2;
         treeNodeZig1.right = treeNodeZig3;
 
-        TreeNodeZig treeNodeZig4 = new TreeNodeZig(7);
-        TreeNodeZig treeNodeZig5 = new TreeNodeZig(15);
+        TreeNode treeNodeZig4 = new TreeNode(7);
+        TreeNode treeNodeZig5 = new TreeNode(15);
         treeNodeZig2.left = treeNodeZig4;
         treeNodeZig2.right = treeNodeZig5;
 
