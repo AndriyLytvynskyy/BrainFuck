@@ -1,4 +1,4 @@
-package com.booking.strings;
+package com.booking.interviewbit.strings;
 
 import java.util.Stack;
 
