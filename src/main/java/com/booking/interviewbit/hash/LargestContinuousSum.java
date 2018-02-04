@@ -14,47 +14,33 @@ import java.util.*;
  Integer[] a = {1, 2, -3, 3 };
  */
 public class LargestContinuousSum {
-    public static ArrayList<Integer> lszeroSum(List<Integer> A) {
-        ArrayList<Integer> results = new ArrayList<>();
-        Map<Integer, Integer> hM = new HashMap<Integer, Integer>();
+    public static ArrayList<Integer> lszeroSum(List<Integer> a) {
+        ArrayList<Integer> ans = new ArrayList<Integer>();
+
         int sum = 0;
-        int max_len = 0;
-        int start_pos = 0;
-        if (A.size() == 1) {
-            results.add(A.get(0));
-            return results;
-        }
-        for (int i = 0; i < A.size(); i++){
-            // Add current element to sum
-            sum += A.get(i);
-
-            if (sum == 0) {
-                max_len = i;
-            } else {
-                // Look this sum in hash table
-                Integer prev_i = hM.get(sum);
-
-                // If this sum is seen before, then update max_len
-                if (prev_i != null) {
-                    max_len = Math.max(max_len, i - prev_i);
-                    if (prev_i !=0 ){
-                        start_pos = prev_i - 1;
-                    } else {
-                        start_pos= prev_i + 1;
-                    }
-
-                } else { // Else put this sum in hash table
-                    hM.put(sum, i);
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(0, -1);
+        int start = 0;
+        //int end = 0;
+        int length = 0;
+        for (int i = 0; i < a.size(); i++){
+            sum += a.get(i);
+            if (map.containsKey(sum)){
+                int last = map.get(sum);
+                if (i - last > length){
+                    start = last;
+                    length = i - last;
                 }
+            }else{
+                map.put(sum, i);
             }
         }
-        if (start_pos != max_len) {
-            for (int i = start_pos; i <= max_len; i++) {
-                results.add(A.get(i));
-            }
-        }
-        return results;
 
+        for (int i = 0; i < length; i++){
+            ans.add(a.get(start + 1 + i));
+        }
+
+        return ans;
     }
 
     public static Integer lszero(List<Integer> A) {
@@ -78,9 +64,12 @@ public class LargestContinuousSum {
 
         //Integer[] a = {0};
         //Integer[] a = {-2, -3, 4, -1, -2, 1, 5, -3};
-        //Integer[] a = {1 ,2 ,-2 ,4 ,-4};
         //Integer[] a = {15, -2, 2, -8, 1, 7, 10, 23};
-        Integer[] a = {1, 2, -3, 3 };
+
+        Integer[] a = {1 ,2 ,-2 ,4 ,-4};
+        //Integer[] a = {1, 2, -3, 3 };
+        //Integer[] a = { -1, 1, 1, -1, -1, 1, 1, -1 };
+
         List<Integer> ls = Arrays.asList(a);
         System.out.println("Maximum contiguous sum is " +
                 lszeroSum(ls));
