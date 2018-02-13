@@ -1,5 +1,8 @@
 package com.booking.interviewbit.backtrack;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Recursive solution: do until (amount - coin) = 0
  *
@@ -13,9 +16,25 @@ public class CoinChangeProblem {
     public static int[] coins = {1, 2};
     public static int amount = 4;
 
+    public static void changeMe(List<Integer> list, Integer x, int[] y){
+        list.add(5);
+        x++;
+        y[0] = 125;
+        System.out.println(y[0]);
+//        System.out.println(x);
+//        System.out.println(list.get(0));
+
+    }
+
     public static void main(String[] args) {
         //System.out.println(combination(4, 0));
-        System.out.println(combinationIterative());
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        Integer x = 10;
+        int[]y = new int[]{0,1};
+        changeMe(list, x, y);
+        System.out.println(y[0]);
+        //System.out.println(combinationIterative());
     }
 
     private static int combinationIterative() {

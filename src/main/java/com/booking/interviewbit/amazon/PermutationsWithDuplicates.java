@@ -3,7 +3,22 @@ package com.booking.interviewbit.amazon;
 import java.util.*;
 
 /**
- * Basic idea is to permutate with Hash Tables
+ * Basic idea is to permutate with Hash Table
+ *
+ * Main difficulty is to understand how algorithm works between different stacks
+ *
+ * In case of "AB" ->
+ *
+ * 1. we build frequenceMap A->1, B->1
+ * 2. Next we start algorithm like:
+ *  permFunc(freqMap, prefix = "", remaining = 2, emptyResult)
+ *
+ *  For each key in freqMap we call permFunc with deducting the count from key in frequencyMap
+ *
+ *  "Magic happens" when "stack returns", then we still set the count for freqMap key,
+ *  and we let the algorithm go for previous stack
+ *
+ *
  *
  *
  */

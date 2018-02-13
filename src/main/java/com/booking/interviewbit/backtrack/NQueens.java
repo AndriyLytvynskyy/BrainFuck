@@ -2,6 +2,11 @@ package com.booking.interviewbit.backtrack;
 
 import java.util.ArrayList;
 
+/**
+ *
+ *
+ *
+ */
 public class NQueens {
     public static ArrayList<ArrayList<Integer>> solveNQueens(int a) {
         ArrayList<ArrayList<Integer>> results1 = new ArrayList<ArrayList<Integer>>();

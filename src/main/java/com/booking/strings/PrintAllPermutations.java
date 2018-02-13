@@ -142,11 +142,11 @@ public class PrintAllPermutations {
 //        for (ArrayList<Integer> perm : perms) {
 //            System.out.println(perm);
 //        }
-        System.out.println("ABC".substring(0,0));
-        List<String> perms = permuteIterativeStrings("ABC");
-        for (String perm : perms) {
-            System.out.println(perm);
-        }
+//        System.out.println("ABC".substring(0,0));
+//        List<String> perms = permuteIterativeStrings("ABC");
+//        for (String perm : perms) {
+//            System.out.println(perm);
+//        }
 //        String s = "ABC";
 //        Set<String> perms1 = new HashSet();
 //        for (int i = 0; i <= s.length() - 1;i++ ){
@@ -164,6 +164,13 @@ public class PrintAllPermutations {
 //        for (String perm : perms1) {
 //            System.out.println(perm);
 //        }
+        String s = "BC";
+        char ch = 'A';
+        for (int i = 0; i <= s.length();i++){
+            String firstPart = s.substring(0, i);
+            String scondpart = s.substring(i);
+            System.out.println(firstPart + ch + scondpart);
+        }
     }
 
 }
