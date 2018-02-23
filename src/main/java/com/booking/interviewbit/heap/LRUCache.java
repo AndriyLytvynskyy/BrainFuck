@@ -3,7 +3,12 @@ package com.booking.interviewbit.heap;
 import java.util.HashMap;
 
 /**
- * Created by Andriy on 8/7/2017.
+ *
+ * https://www.programcreek.com/2013/03/leetcode-lru-cache-java/
+ *
+ * Using double linked list to quickly move nodes
+ *
+ *
  */
 class Node{
     int key;
