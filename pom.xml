@@ -12,6 +12,10 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <scala.version>2.11</scala.version>
+      <scala.full.version>${scala.version}.7</scala.full.version>
+      <scalaplugin.version>3.2.2</scalaplugin.version>
+      <min-jdk.version>1.8</min-jdk.version>
   </properties>
     <build>
 
@@ -25,15 +29,51 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>${scalaplugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>scala-compile-first</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>scala-test-compile</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>doc-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
 
     </build>
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+      <dependency>
+          <groupId>org.scala-lang</groupId>
+          <artifactId>scala-library</artifactId>
+          <version>${scala.full.version}</version>
+          <scope>compile</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>org.scala-lang.modules</groupId>
+          <artifactId>scala-java8-compat_${scala.version}</artifactId>
+          <version>0.8.0</version>
+      </dependency>
+
   </dependencies>
 </project>
