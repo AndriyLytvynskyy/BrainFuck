@@ -32,12 +32,12 @@ public class LRUCache {
     HashMap<Integer, Node> map = new HashMap<Integer, Node>();
     Node head=null;
     Node end=null;
-
     public LRUCache(int capacity) {
         this.capacity = capacity;
     }
 
     public int get(int key) {
+
         if(map.containsKey(key)){
             Node n = map.get(key);
             remove(n);
