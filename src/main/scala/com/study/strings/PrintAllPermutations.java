@@ -65,7 +65,7 @@ public class PrintAllPermutations {
                     permsTemp.remove(j);
                 }
             }
-            permutations = new ArrayList<ArrayList<Integer>>(current);
+            permutations = new ArrayList<>(current);
 
         }
 

@@ -1,4 +1,4 @@
-package com.study.interviewbit.trees;
+package com.study.interviewbit.amazon.leet.trees;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -19,6 +19,8 @@ public class ZigZagLevelTraversal {
         while (!stack.isEmpty()) {
             // Create a helper stack
             Stack<TreeNode> helperStack = new Stack<TreeNode>();
+            LinkedList l = new LinkedList();
+
             ArrayList<Integer> list = new ArrayList<Integer>();
             while (!stack.isEmpty()) {
                 TreeNode pop = stack.pop();
@@ -50,14 +52,14 @@ public class ZigZagLevelTraversal {
     }
 
     public static void main(String[] args) {
-        TreeNode treeNodeZig1 = new TreeNode(3);
-        TreeNode treeNodeZig2 = new TreeNode(20);
-        TreeNode treeNodeZig3 = new TreeNode(9);
+       TreeNode treeNodeZig1 = new TreeNode(3);
+       TreeNode treeNodeZig2 = new TreeNode(20);
+       TreeNode treeNodeZig3 = new TreeNode(9);
         treeNodeZig1.left = treeNodeZig2;
         treeNodeZig1.right = treeNodeZig3;
 
-        TreeNode treeNodeZig4 = new TreeNode(7);
-        TreeNode treeNodeZig5 = new TreeNode(15);
+       TreeNode treeNodeZig4 = new TreeNode(7);
+       TreeNode treeNodeZig5 = new TreeNode(15);
         treeNodeZig2.left = treeNodeZig4;
         treeNodeZig2.right = treeNodeZig5;
 

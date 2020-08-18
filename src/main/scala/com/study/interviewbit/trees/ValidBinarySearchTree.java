@@ -17,6 +17,9 @@ public class ValidBinarySearchTree {
         if (root == null){
             return true;
         }
+        int val = root.val;
+        if (min != null && val <= min) return false;
+        if (max != null && val > max) return false;
         if ((root.val > min) && (root.val < max) &&
                 checkBST1(root.left, min, root.val) &&
                 checkBST1(root.right, root.val, max)){
